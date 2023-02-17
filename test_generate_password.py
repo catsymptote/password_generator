@@ -1,4 +1,6 @@
 import pytest
+
+import os
 import matplotlib.pyplot as plt
 from generate_password import PasswordGenerator
 
@@ -10,7 +12,7 @@ from generate_password import PasswordGenerator
 def test_get_random_adjectives(word_list, plot_name):
     pw_gen = PasswordGenerator()
     freqs = {}
-    for i in range(1_000_000):
+    for _ in range(1_000_000):
         try:
             word = pw_gen.get_random(word_list)
             freqs[word] = freqs.get(word, 0) + 1
@@ -23,6 +25,9 @@ def test_get_random_adjectives(word_list, plot_name):
     assert set(freqs.keys()) == set(word_list)
 
     # Generate sorted frequency plot
+    if not os.path.exists('report'):
+        os.mkdir('report')
+
     plt.plot(sorted_freqs)
     plt.title(f'Sorted frequency of selected {plot_name}')
     plt.xlabel('Word number')
