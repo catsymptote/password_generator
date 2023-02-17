@@ -1,0 +1,20 @@
+{
+    "adjectives": "assets/adjectives.txt",
+    "nouns": "assets/nouns.txt",
+    "URLs": {
+        "short": {
+            "adjectives": "https://raw.githubusercontent.com/taikuukaits/SimpleWordlists/master/Wordlist-Adjectives-Common-Audited-Len-3-6.txt",
+            "nouns": "https://raw.githubusercontent.com/taikuukaits/SimpleWordlists/master/Wordlist-Nouns-Common-Audited-Len-3-6.txt"
+        },
+        "long": {
+
+            "adjectives": "https://raw.githubusercontent.com/zl4bv/adjective-noun/main/src/wordlists/adjectives.json",
+            "nouns": "https://raw.githubusercontent.com/zl4bv/adjective-noun/main/src/wordlists/nouns.json"
+        },
+        "huge": {
+
+            "adjectives": "https://raw.githubusercontent.com/taikuukaits/SimpleWordlists/master/Wordlist-Adjectives-All.txt",
+            "nouns": "https://raw.githubusercontent.com/taikuukaits/SimpleWordlists/master/Wordlist-Nouns-All.txt"
+        }
+    }
+}

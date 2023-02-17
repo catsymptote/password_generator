@@ -3,23 +3,17 @@ import os
 import pyperclip
 from random import SystemRandom
 
+from word_loader import WordLoader
+
 
 class PasswordGenerator:
     def __init__(self):
         # Read files
         file_path = os.path.realpath(__file__)
-        with open(os.path.join(os.path.dirname(file_path), 'assets', 'adjectives.txt')) as f:
-            adjective_text = f.read()
-
-        with open(os.path.join(os.path.dirname(file_path), 'assets', 'nouns.txt')) as f:
-            noun_text = f.read()
+        self.wl = WordLoader() 
 
         self.symbols = '.,;:!?@#$%^&*()_+=-[]{}|;'
         self.numbers = '0123456789'
-
-        # Make lists
-        self.adjectives = list(set([adjective for adjective in adjective_text.split('\n')]))
-        self.nouns = list(set([noun for noun in noun_text.split('\n')]))
 
         self.rand = SystemRandom()
 
@@ -34,8 +28,8 @@ class PasswordGenerator:
         return words[random_index]
 
     def get_random_pair(self):
-        adjective = self.get_random(self.adjectives)
-        noun = self.get_random(self.nouns)
+        adjective = self.get_random(self.wl.adjectives)
+        noun = self.get_random(self.wl.nouns)
         return (adjective, noun)
 
     def insert_random(self, pw: str, instertion_iterable) -> str:
