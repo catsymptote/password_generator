@@ -4,6 +4,8 @@ assets/
 report/
 old/
 
+.DS_Store
+
 
 ## Template ignores
 
